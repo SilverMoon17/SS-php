@@ -36,7 +36,7 @@
                                 </div>
                             </li>
                             <li class="navigation-item">
-                                <a href="about.php" class="navigation-link">О нас</a>
+                                <a href="about.php" class="navigation-link">Контакты</a>
                             </li>
                             <li class="navigation-item">
                                 <a href="help.php" class="navigation-link">Помощь</a>

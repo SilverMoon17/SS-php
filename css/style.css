@@ -315,6 +315,76 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     padding-top: 30px;
     padding-bottom: 26px;
 }
+
+
+
+
+/* style about.php */
+.contact-title {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    line-height: 47px;
+    font-style: normal;
+    font-weight: normal;
+}
+.contact-email {
+    /* min-width: 23%; */
+    width: 355px;
+    margin-bottom: 18px;
+    background: #FCFCFC;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    outline: none;
+    
+}
+.contact-email::placeholder {font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3);}
+.contact-email::-moz-placeholder {font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3);}
+.contact-email[type="email"]::-webkit-input-placeholder { font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+.contact-email[type="email"]:-ms-input-placeholder { font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+.contact-email[type="email"]::-ms-input-placeholder { font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+.contact-email[type="email"]::placeholder { font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+
+.contact-message {
+    background: #FCFCFC;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    outline: none;
+    min-height: 134px;
+    margin-bottom: 18px;
+    resize: none;
+    width: 355px;
+}
+
+.contact-message::placeholder {font-weight: 600; font-size: 15px; line-height: 12px; color: rgba(0, 0, 0, 0.3);}
+.contact-message::-moz-placeholder {font-weight: 600; font-size: 15px; line-height: 12px; color: rgba(0, 0, 0, 0.3);}
+.contact-message::-webkit-input-placeholder { font-weight: 600; font-size: 15px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+.contact-message:-ms-input-placeholder { font-weight: 600; font-size: 15px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+.contact-message::-ms-input-placeholder { font-weight: 600; font-size: 15px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+.contact-message::placeholder { font-weight: 600; font-size: 15px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+
+.send-button {
+    color:white;
+    width: 134px;
+    height: 35px;
+    background: #000000;
+    border-radius: 16px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    position:absolute; 
+    left:43px;
+}
+.disabled {
+    opacity: 0.6;
+}
+
+
+
+
+
+
+
 @media(max-width: 1200px) {
     /* .overlay {
         position: relative;
@@ -490,5 +560,15 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     }
     .payment-link:not(:last-child) {
         margin-right: 5px;
+    }
+    .contact-email {
+        width: 300px;   
+    }
+    .contact-message {
+        width: 300px;
+    }
+    .send-button {
+        position:absolute; 
+        left:17px;
     }
 }

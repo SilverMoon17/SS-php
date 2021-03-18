@@ -13,10 +13,43 @@
     <title>SS</title>
 </head>
 <body>
-    <?php require 'template/header.php';?>
-    <main style="margin-bottom: 626px;"></main>
+    <?php require 'template/header.php' ?>
+    <main style="margin-bottom: 626px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="contact-title">Предложение по улучшению</h3>
+                    <form method="post" action="email-send.php" class = "d-flex flex-column align-items-center">
+                        <input class="contact-email form-control" type="email" name="email" placeholder="Введите ваш e-mail" autocomplete="off" onkeyup='checkParams()'>
+                        <textarea name="message" class = "contact-message" placeholder="Введите ваше сообщение" onkeyup='checkParams()'></textarea>
+                        <div style="position:relative;"><button type="submit" name="send" class="send-button disabled" disabled>Отправить</button></div>
+                    </form> 
+                </div>     
+            </div>
+        </div>
+    </main>
     <?php require 'template/footer.php' ?>
-    <script src="js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script type='text/javascript'>
+        function checkParams() {
+            var email = $('.contact-email').val();
+            var message = $('.contact-message').val();
+            
+            function validateEmail(email) 
+            {
+                var re = /\S+@\S+\.\S+/;
+                return re.test(email);
+            }
+
+            if (email.length != 0 && message.length > 10 && validateEmail(email)) {
+                $('.send-button').removeAttr('disabled');
+                $('.send-button').removeClass('disabled');
+            } else {
+                $('.send-button').attr('disabled','disabled');
+                $('.send-button').addClass('disabled');
+            }
+        }
+    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>

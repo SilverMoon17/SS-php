@@ -14,7 +14,7 @@
                                 <a href="schedule.php" class="footer-menu-link">Расписание</a>
                             </li>
                             <li class="footer-menu-item">
-                                <a href="about.php" class="footer-menu-link">О нас</a>
+                                <a href="about.php" class="footer-menu-link">Контакты</a>
                             </li>
                             <li class="footer-menu-item">
                                 <a href="help.php" class="footer-menu-link">Помощь</a>
