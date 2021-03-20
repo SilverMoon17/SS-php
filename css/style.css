@@ -36,6 +36,8 @@ body {
     border-radius: 4px;
     overflow: hidden;
     border: 1px solid #D9D9D9;
+    position: absolute;
+    z-index: 2;
 }
 .search-input{
     border: none;
@@ -71,6 +73,38 @@ input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-results-button,
 input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.reg-button {
+    border: none;
+    color: #fff;
+    background: #000;
+    margin-right: 18px;
+    outline: none;
+    cursor: pointer;
+}
+.reg-button:hover {
+    opacity: 0.8;
+}
+.log-in-button {
+    color: #fff;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 4px 20px;
+    background-color: #000;
+    font-size: 14px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.002em;
+    outline:none;
+    cursor: pointer;
+}
+.log-in-button:hover {
+    opacity: 0.8
+}
+
 .slide {
     padding-top: 109px;
     background-color: #111214;

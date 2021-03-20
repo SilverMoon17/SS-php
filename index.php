@@ -27,7 +27,7 @@
                                 <h2 class="slide-title">Consectetur magna id at mauris. Arcu quis ut luctus sem.</h2>
                                 <p class="slide-description">Placerat aliquet volutpat aliquam sit lacinia. Id et gravida et ultricies blandit sit egestas feugiat. 
                                     Sed at id molestie amet ipsum. Aenean varius diam elementum pellentesque</p>
-                                <a href="news/articles/article-1.html" class="continue-button">Читать далее</a>
+                                <a href="news/articles/article-1.php" class="continue-button">Читать далее</a>
                             </div>
                             <!-- /.col-4 offset-lg-1 -->
                             <div class="slide-image slide-image-1 col-xl-5 col-6 d-flex justify-content-end">
