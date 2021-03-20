@@ -19,12 +19,12 @@
 
     if (count($user) == 0) {
         alert("Пользователь не найден!");
+        header ("Location: /");
         exit();
     }
 
     setcookie('username', $user['name'], time() + 60*60*45, "/");
     
-    header ("Location: /");
 
     $mysql->close();
 
