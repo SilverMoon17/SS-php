@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>Новости</title>
+    <title>Личный кабинет</title>
 </head>
 <body>
     <?php require 'template/header.php';?>

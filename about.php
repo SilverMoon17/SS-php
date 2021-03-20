@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>SS</title>
+    <title>Контакты</title>
 </head>
 <body>
     <?php require 'template/header.php' ?>
@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-12">
                     <h3 class="title contact-title">Предложение по улучшению</h3>
-                    <form method="post" action="email-send.php" class = "d-flex flex-column align-items-center">
+                    <form method="post" action="php/email-send.php" class = "d-flex flex-column align-items-center">
                         <input class="contact-email form-control" type="email" name="email" placeholder="Введите ваш e-mail" autocomplete="off" onkeyup='checkParams()'>
                         <textarea name="message" class = "contact-message" placeholder="Введите ваше сообщение" onkeyup='checkParams()'></textarea>
                         <div style="position:relative;"><button type="submit" name="send" class="send-button disabled" disabled>Отправить</button></div>

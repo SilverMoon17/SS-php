@@ -47,8 +47,10 @@
             </div>
                 <!-- /.col-8 -->
             <div class="col-3 d-flex justify-content-end align-items-center">
-                    <a href="registration-form.php" class = "reg-button">Регистрация</a>
-                    <a href="login.php" class = "log-in-button">Войти</a>
+                <a href="<?php echo $path ?>registration-form.php" class = "reg-button">Регистрация</a>
+                <a href="<?php echo $path ?>login.php" class = "log-in-button">Войти</a>
+                <a href="<?php echo $path ?>cabinet.php" class = "header-username hidden"><?php $username = $_COOKIE['username']; echo $username ?></a>
+                <a href="#" class = "log-out-button hidden">Выйти</a>
             </div>
             <!-- /.col-3 -->
         </div>
@@ -69,3 +71,65 @@
         </div>    
     </div>
 </div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script type='text/javascript'>
+    regBtn = document.querySelector('.reg-button');
+    loginBtn = document.querySelector('.log-in-button');
+    username = document.querySelector('.header-username');
+    logOutBtn = document.querySelector('.log-out-button');
+    function setCookie(name, value, options = {}) {
+
+        options = {
+        path: '/',
+        // при необходимости добавьте другие значения по умолчанию
+        ...options
+        };
+
+        if (options.expires instanceof Date) {
+        options.expires = options.expires.toUTCString();
+        }
+
+        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+        for (let optionKey in options) {
+        updatedCookie += "; " + optionKey;
+        let optionValue = options[optionKey];
+        if (optionValue !== true) {
+            updatedCookie += "=" + optionValue;
+        }
+        }
+
+        document.cookie = updatedCookie;
+    }
+    function getCookie(name) {
+        let matches = document.cookie.match(new RegExp(
+            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+        ));
+        return matches ? decodeURIComponent(matches[1]) : undefined;
+    }
+    function deleteCookie(name) {
+        setCookie(name, "", {
+        'max-age': -1
+        })
+    }
+    if (getCookie("username") != '') {
+        regBtn.classList.add('hidden');
+        loginBtn.classList.add('hidden');
+        username.classList.remove('hidden');
+        logOutBtn.classList.remove('hidden');
+    } 
+    if (getCookie("username") === undefined) {
+        regBtn.classList.remove('hidden');
+        loginBtn.classList.remove('hidden');
+        username.classList.add('hidden');
+        logOutBtn.classList.add('hidden');
+    }
+    logOutBtn.addEventListener('click', function(event){
+        if (confirm("Вы действительно хотите выйти?")) {
+            deleteCookie("username");
+            window.location.href = '../index.php';
+        } else {
+            location.reload()
+        }
+    })
+</script>

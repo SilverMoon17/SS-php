@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/bootstrap-grid.css">
     <link rel="stylesheet" href="css/style.css">
-    <title>SS</title>
+    <title>Расписание</title>
 </head>
 <body>
     <?php require 'template/header.php';?>

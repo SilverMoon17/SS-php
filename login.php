@@ -18,10 +18,10 @@
         <div class="container">
             <div class="row d-flex justify-content-center">
                 <div class="col-4">
-                <form method="post" action="auth.php" class="d-flex flex-column align-items-center justify-content-center" style="position:relative;">
+                <form method="post" action="php/auth.php" class="d-flex flex-column align-items-center justify-content-center" style="position:relative;">
                     <h3 class = "title login-title">Вход</h3>
-                    <label class="input-title">Логин<input type = "text" class="input-form login" name="login" id="login" placeholder="Введите ваш логин" autocomplete="off"></label>
-                    <label class="input-title">Пароль<input type = "text" class="input-form password" name="pass" id="pass" placeholder="Введите ваш пароль" autocomplete="off"></label>
+                    <label class="input-title">Логин<input type = "text" class="input-form login" name="login" id="login" placeholder="Введите ваш логин" autocomplete="off" onkeyup='checkParams()'></label>
+                    <label class="input-title">Пароль<input type = "password" class="input-form password" name="pass" id="pass" placeholder="Введите ваш пароль" autocomplete="off" onkeyup='checkParams()'></label>
                     <div style="position:relative;"><button type="submit" name="send" class="btn login-button disabled" disabled>Войти</button></div>
                 </form>
               </div>  
@@ -29,7 +29,22 @@
         </div>
     </main>
     <?php require 'template/footer.php' ?>
-    <script src="js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script type='text/javascript'>
+        function checkParams() {
+            var login = $('.login').val();
+            var password = $('.password').val();
+            
+
+            if (login.length != 0 && login.length < 50 && login.length >= 5 && password.length >= 5) {
+                $('.btn').removeAttr('disabled');
+                $('.btn').removeClass('disabled');
+            } else {
+                $('.btn').attr('disabled','disabled');
+                $('.btn').addClass('disabled');
+            }
+        }
+    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
