@@ -46,11 +46,9 @@
                 </nav>
             </div>
                 <!-- /.col-8 -->
-            <div class="col-3 d-flex justify-content-end">
-                <form class="d-flex">
-                    <button class = "reg-button">Регистрация</button>
-                    <button class = "log-in-button">Войти</button>
-                </form>
+            <div class="col-3 d-flex justify-content-end align-items-center">
+                    <a href="registration-form.php" class = "reg-button">Регистрация</a>
+                    <a href="login.php" class = "log-in-button">Войти</a>
             </div>
             <!-- /.col-3 -->
         </div>

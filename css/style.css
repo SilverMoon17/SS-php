@@ -350,6 +350,64 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     padding-bottom: 26px;
 }
 
+.title {
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    line-height: 47px;
+    text-align: center;
+    font-style: normal;
+    font-weight: normal;
+}
+.btn {
+    color:white;
+    background: #000000;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.input-title {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 14px;
+}
+label, .input-form {
+    display:block;
+    margin-top: 5px;
+}
+
+
+
+
+
+/* style login.php */
+.login-button {
+    margin-top: 33px;
+    padding: 10px 24px;
+    position:absolute;
+    left: 66px
+}
+.registration-button {
+    position:absolute;
+    left: 17px;
+    margin-top: 33px;
+    padding: 10px 24px;
+}
+.input-form {
+    padding-right: 120px;
+}
+.login, .username {
+    margin-bottom: 15px;
+}
+.input-form::placeholder {font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3);}
+.input-form::-moz-placeholder {font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3);}
+.input-form[type="text"]::-webkit-input-placeholder { font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+.input-form[type="text"]:-ms-input-placeholder { font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+.input-form[type="text"]::-ms-input-placeholder { font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+.input-form[type="text"]::placeholder { font-weight: 600; font-size: 12px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
+
+
+
 
 
 
