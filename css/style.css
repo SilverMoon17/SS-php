@@ -398,12 +398,17 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     font-weight: 600;
     font-size: 18px;
     line-height: 14px;
+    margin-bottom: 15px;
 }
 label, .input-form {
     display:block;
     margin-top: 5px;
 }
-
+.error {
+    color:red;
+    margin: 0;
+    margin-top: 10px;
+}
 
 
 
@@ -425,9 +430,6 @@ label, .input-form {
     padding-right: 120px;
     padding-top: 6px;
     padding-bottom: 6px;
-}
-.login, .username {
-    margin-bottom: 15px;
 }
 .input-form::placeholder {font-weight: 600; font-size: 15px; line-height: 12px; color: rgba(0, 0, 0, 0.3);}
 .input-form::-moz-placeholder {font-weight: 600; font-size: 15px; line-height: 12px; color: rgba(0, 0, 0, 0.3);}
@@ -677,6 +679,15 @@ label, .input-form {
 @media(max-width: 360px) {
     .slide {
         min-height: 360px;
+    }
+    .input-form {
+        padding: 0;
+    }
+    .registration-button {
+        left: -42px;
+    }
+    .login-button {
+        left: 7px;
     }
 }
 @media (max-width: 345px) {

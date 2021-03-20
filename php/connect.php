@@ -1,0 +1,1 @@
+<?php $mysql = new mysqli('ss', 'mysql', 'mysql', 'register-db'); ?>

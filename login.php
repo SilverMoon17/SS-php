@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -22,6 +23,12 @@
                     <h3 class = "title login-title">Вход</h3>
                     <label class="input-title">Логин<input type = "text" class="input-form login" name="login" id="login" placeholder="Введите ваш логин" autocomplete="off" onkeyup='checkParams()'></label>
                     <label class="input-title">Пароль<input type = "password" class="input-form password" name="pass" id="pass" placeholder="Введите ваш пароль" autocomplete="off" onkeyup='checkParams()'></label>
+                    <?php
+                        if ($_SESSION['error']) {
+                            echo '<p class="error">'.$_SESSION['error'].'</p>';
+                        } 
+                        unset($_SESSION['error'])
+                    ?>
                     <div style="position:relative;"><button type="submit" name="send" class="btn login-button disabled" disabled>Войти</button></div>
                 </form>
               </div>  

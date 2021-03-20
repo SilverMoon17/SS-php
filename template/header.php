@@ -46,7 +46,7 @@
                 </nav>
             </div>
                 <!-- /.col-8 -->
-            <div class="col-3 d-flex justify-content-end align-items-center">
+            <div class="col-xl-3 pb-2 pb-xl-0 d-flex justify-content-end align-items-center">
                 <a href="<?php echo $path ?>registration-form.php" class = "reg-button">Регистрация</a>
                 <a href="<?php echo $path ?>login.php" class = "log-in-button">Войти</a>
                 <a href="<?php echo $path ?>cabinet.php" class = "header-username hidden"><?php $username = $_COOKIE['username']; echo $username ?></a>
