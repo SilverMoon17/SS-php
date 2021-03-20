@@ -135,10 +135,10 @@
                         <div class="col-lg-6 col-12">
                             <div class="swiper-container gallery-top-1">
                                 <div class="swiper-wrapper">
-                                  <div class="swiper-slide phone-slide"><a data-fancybox="gallery-iPhone12PROMAX" class="info-image-link" href="img/info-slides-img/iphone-12-proMax-big.jpg"><img src="img/info-slides-img/iphone-12-proMax-small-1.png" alt="iPhone" class="info-image"></a></div>
-                                  <div class="swiper-slide phone-slide"><a data-fancybox="gallery-iPhone12PROMAX" class="info-image-link" href="img/info-slides-img/iphone-12-proMax-big-2.png"><img src="img/info-slides-img/iphone-12-proMax-small-2.png" alt="iPhone" class="info-image"></a></div>
-                                  <div class="swiper-slide phone-slide"><a data-fancybox="gallery-iPhone12PROMAX" class="info-image-link" href="img/info-slides-img/iphone-12-proMax-big-3.png"><img src="img/info-slides-img/iphone-12-proMax-small-3.png" alt="iPhone" class="info-image"></a></div>
-                                  <div class="swiper-slide phone-slide"><a data-fancybox="gallery-iPhone12PROMAX" class="info-image-link" href="img/info-slides-img/iphone-12-proMax-big-4.png"><img src="img/info-slides-img/iphone-12-proMax-small-4.png" alt="iPhone" class="info-image"></a></div>
+                                  <div class="swiper-slide phone-slide"><a data-fancybox="gallery-iPhone12PROMAX" class="info-image-link" href="img/info-slides-img/iphone-12-ProMax-big.png"><img src="img/info-slides-img/iphone-12-ProMax-small-1.png" alt="iPhone" class="info-image"></a></div>
+                                  <div class="swiper-slide phone-slide"><a data-fancybox="gallery-iPhone12PROMAX" class="info-image-link" href="img/info-slides-img/iphone-12-ProMax-big-2.png"><img src="img/info-slides-img/iphone-12-ProMax-small-2.png" alt="iPhone" class="info-image"></a></div>
+                                  <div class="swiper-slide phone-slide"><a data-fancybox="gallery-iPhone12PROMAX" class="info-image-link" href="img/info-slides-img/iphone-12-ProMax-big-3.png"><img src="img/info-slides-img/iphone-12-ProMax-small-3.png" alt="iPhone" class="info-image"></a></div>
+                                  <div class="swiper-slide phone-slide"><a data-fancybox="gallery-iPhone12PROMAX" class="info-image-link" href="img/info-slides-img/iphone-12-ProMax-big-4.png"><img src="img/info-slides-img/iphone-12-ProMax-small-4.png" alt="iPhone" class="info-image"></a></div>
                                 </div>
                                 <!-- Add Arrows -->
                                 <div class="swiper-button-next swiper-button-black"></div>
@@ -146,10 +146,10 @@
                               </div>
                               <div class="swiper-container gallery-thumbs-1" style="text-align: center;">
                                 <div class="swiper-wrapper">
-                                  <div class="swiper-slide"><img src="img/info-slides-img/iphone-12-proMax-thumb-nav.png" alt="iPhone" class="info-image"></div>
-                                  <div class="swiper-slide"><img src="img/info-slides-img/iphone-12-proMax-thumb-2.png" alt="iPhone" class="info-image"></div>
-                                  <div class="swiper-slide"><img src="img/info-slides-img/iphone-12-proMax-thumb-3.png" alt="iPhone" class="info-image"></div>
-                                  <div class="swiper-slide"><img src="img/info-slides-img/iphone-12-proMax-thumb-4.png" alt="iPhone" class="info-image"></div>
+                                  <div class="swiper-slide"><img src="img/info-slides-img/iphone-12-ProMax-thumb-1.png" alt="iPhone" class="info-image"></div>
+                                  <div class="swiper-slide"><img src="img/info-slides-img/iphone-12-ProMax-thumb-2.png" alt="iPhone" class="info-image"></div>
+                                  <div class="swiper-slide"><img src="img/info-slides-img/iphone-12-ProMax-thumb-3.png" alt="iPhone" class="info-image"></div>
+                                  <div class="swiper-slide"><img src="img/info-slides-img/iphone-12-ProMax-thumb-4.png" alt="iPhone" class="info-image"></div>
                                 </div>
                             </div>
                         </div>

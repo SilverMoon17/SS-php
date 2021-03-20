@@ -488,8 +488,9 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     .navigation-link, .dropbtn {
         padding: 0;
     }
-    .navigation-link:hover {
+    .navigation-link:hover, .dropbtn:hover {
         border: none;
+        opacity: 0.7;
     }
     .fixed-page {
         overflow: hidden;
