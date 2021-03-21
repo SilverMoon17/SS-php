@@ -6,29 +6,35 @@
     $email = filter_var(trim($_POST['email']), FILTER_SANITIZE_STRING);
     $pass_confirm = filter_var(trim($_POST['pass_confirm']), FILTER_SANITIZE_STRING);
 
-    function alert($msg)
-    {
-        echo "<script type='text/javascript'>alert('$msg');</script>";
-    }
 
     if (mb_strlen($login) < 5 || mb_strlen($login) > 50) {
-        alert("Длина логина не должна быть меньше 5 символов и больше 50!");
+        $_SESSION['error']= "Длина логина не должна быть меньше 5 символов и больше 50!";
+        header("Location: ../registration-form.php");
         exit();
     } else if (mb_strlen($username) < 3 || mb_strlen($username) > 50) {
-        alert("Длина имени пользователя не должна быть меньше 5 символов и больше 50!");
+        $_SESSION['error']= "Длина имени пользователя не должна быть меньше 5 символов и больше 50!";
+        header("Location: ../registration-form.php");
         exit();
     } else if(mb_strlen($pass) < 5 || mb_strlen($pass) > 15) {
-        alert("Недопустимая длина пароля (от 5 до 15 символов)!");
+        $_SESSION['error']= "Недопустимая длина пароля (от 5 до 15 символов)!";
+        header("Location: ../registration-form.php");
         exit();
     }
     $pass = md5($pass."dfsfrtfdkoutbkvhcysbIITUR");
     $pass_confirm = md5($pass_confirm."dfsfrtfdkoutbkvhcysbIITUR");
 
     require_once 'connect.php';
-    $result = $mysql -> query("SELECT * FROM `users` WHERE `login` = 
+    
+    $result_login = $mysql -> query("SELECT * FROM `users` WHERE `login` = 
     '$login'");
-    $exst_login = $result->fetch_assoc();
-    if ($exst_login['login'] == $login) {
+    $exst_login = $result_login->fetch_assoc();
+
+    $result_email = $mysql -> query("SELECT * FROM `users` WHERE `email` = 
+    '$email'");
+    $exst_email = $result_email->fetch_assoc();
+
+
+    if (count($exst_login) != 0) {
         $_SESSION['error'] = 'Пользователь с таким логином уже существует';
         header("Location: ../registration-form.php");
         exit();
@@ -36,8 +42,13 @@
         $_SESSION['error'] = 'Пароли не совпадают';
         header("Location: ../registration-form.php");
         exit();
+    } else if (count($exst_email) != 0) {
+        $_SESSION['error'] = 'Пользователь с таким e-mail уже существует';
+        header("Location: ../registration-form.php");
+        exit();
     } else {
         $mysql -> query("INSERT INTO `users` (`login`, `pass`, `name`, `email`, `pass_confirm`) VALUES ('$login', '$pass', '$username', '$email', '$pass_confirm')");
+
     }
     
     $mysql -> close();
