@@ -145,6 +145,61 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     display: inline-flex;
     margin-right: auto;
 }
+.confirm-block {
+    position: absolute;
+    z-index: 999999;
+    left: 38%;
+    top: 30%;
+    background: #000000;
+    border-radius: 14px;
+    box-shadow: 0 0 0 9999px rgba(0,0,0, 0.7);
+}
+.confirm-title {
+    padding-top: 18px;
+    padding-right: 40px;
+    padding-left: 40px;
+    font-size: 18px;
+    line-height: 21px;
+    font-style: normal;
+    font-weight: normal;
+}
+.confirm-buttons {
+    padding-top: 29px;
+    padding-bottom: 17px;
+    margin-right: 43px;
+}
+.confirm-yes {
+    color:black;
+    padding: 8px 20px;
+    margin-left: 15px;
+    background: #FFFFFF;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+}
+.confirm-no {
+    color: #fff;
+    background: transparent 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 8px 20px;
+    cursor: pointer;
+    outline: none;
+}
+.confirm-yes:hover, .confirm-no:hover {
+    opacity: 0.8;
+}
+
+
+
+
+
+
+
+
 
 .slide {
     padding-top: 109px;
@@ -436,21 +491,24 @@ label, .input-form {
 
 /* style login.php */
 .login-button {
-    margin-top: 33px;
+    margin-top: 18px;
     padding: 10px 24px;
     position:absolute;
-    left: 66px
+    right: 47px;
 }
 .registration-button {
     position:absolute;
-    left: 17px;
-    margin-top: 33px;
+    right: 43px;
+    margin-top: 18px;
     padding: 10px 24px;
 }
 .input-form {
     padding-right: 120px;
     padding-top: 6px;
     padding-bottom: 6px;
+    background: #FCFCFC;
+    border: 1px solid #000000;
+    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.25);
 }
 .input-form::placeholder {font-weight: 600; font-size: 15px; line-height: 12px; color: rgba(0, 0, 0, 0.3);}
 .input-form::-moz-placeholder {font-weight: 600; font-size: 15px; line-height: 12px; color: rgba(0, 0, 0, 0.3); }
@@ -463,8 +521,22 @@ label, .input-form {
 .hidden {
     display: none;
 }
-
-
+.reg-off {
+    margin: 0;
+    position: absolute;
+    right: 11px;
+    font-size: 12px;
+    line-height: 24px;
+    left: 50px;
+    bottom: -49px;
+}
+.link-offer {
+    color: #0094FF;
+    text-decoration: underline;
+}
+.link-offer:hover {
+    opacity: 0.6;
+}
 
 
 

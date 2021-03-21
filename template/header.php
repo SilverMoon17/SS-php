@@ -77,68 +77,19 @@
         </div>    
     </div>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <div class="confirm-block hidden">
+                <h3 class="confirm-title text-light">Вы действительно хотите выйти?</h3>
+                <div class="confirm-buttons d-flex justify-content-end">
+                    <button class="confirm-no">Нет</button>
+                    <button class="confirm-yes">Да</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script type='text/javascript'>
-    regBtn = document.querySelector('.reg-button');
-    loginBtn = document.querySelector('.log-in-button');
-    username = document.querySelector('.header-username');
-    logOutBtn = document.querySelector('.log-out-button');
-    avatarImg = document.querySelector('.avatar-img');
-    function setCookie(name, value, options = {}) {
-
-        options = {
-        path: '/',
-        // при необходимости добавьте другие значения по умолчанию
-        ...options
-        };
-
-        if (options.expires instanceof Date) {
-        options.expires = options.expires.toUTCString();
-        }
-
-        let updatedCookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
-
-        for (let optionKey in options) {
-        updatedCookie += "; " + optionKey;
-        let optionValue = options[optionKey];
-        if (optionValue !== true) {
-            updatedCookie += "=" + optionValue;
-        }
-        }
-
-        document.cookie = updatedCookie;
-    }
-    function getCookie(name) {
-        let matches = document.cookie.match(new RegExp(
-            "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
-        ));
-        return matches ? decodeURIComponent(matches[1]) : undefined;
-    }
-    function deleteCookie(name) {
-        setCookie(name, "", {
-        'max-age': -1
-        })
-    }
-    if (getCookie("username") != '') {
-        regBtn.classList.add('hidden');
-        loginBtn.classList.add('hidden');
-        username.classList.remove('hidden');
-        logOutBtn.classList.remove('hidden');
-        avatarImg.classList.remove('hidden');
-    } 
-    if (getCookie("username") === undefined) {
-        regBtn.classList.remove('hidden');
-        loginBtn.classList.remove('hidden');
-        username.classList.add('hidden');
-        logOutBtn.classList.add('hidden');
-        avatarImg.classList.add('hidden');
-    }
-    logOutBtn.addEventListener('click', function(event){
-        if (confirm("Вы действительно хотите выйти?")) {
-            deleteCookie("username");
-            window.location.href = '../index.php';
-        } else {
-            location.reload()
-        }
-    })
-</script>

@@ -35,7 +35,7 @@
                         } 
                         unset($_SESSION['error']);
                     ?>
-                    <div style="position:relative;"><button type="submit" name="send" class="btn registration-button disabled" disabled>Регистрация</button></div>
+                    <div><p class="reg-off">Уже есть аккаунт? - <a class = "link-offer" href = "login.php">Войти</a></p><button type="submit" name="send" class="btn registration-button disabled" disabled>Регистрация</button></div>
                 </form>
               </div>  
             </div>

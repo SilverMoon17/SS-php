@@ -29,6 +29,7 @@
                 <form class="mt-5">
                     <img src="<?= $_SESSION['user']['avatar'] ?>" width="15%" height="auto">
                     <h3>Ваш идентификатор: <?= $_SESSION['user']['id'] ?></h3>
+                    <h3>Логин: <?= $_SESSION['user']['login'] ?></h3>
                     <h3>Имя пользователя: <?= $_SESSION['user']['name'] ?></h3>
                     <h3>E-mail: <?= $_SESSION['user']['email'] ?></h3>
                 </form> 
