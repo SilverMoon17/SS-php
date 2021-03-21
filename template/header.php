@@ -1,6 +1,11 @@
-<?php $path='../../' ?>
+<?php $path='../../';
+    $username = $_COOKIE['username'];
+    if(mb_strlen($username) == 0) {
+        unset($_SESSION['user']);
+    }
+?>
 <header class="header">
-    <div class="container">
+    <div class="container ">
         <div class="row d-flex justify-content-xl-around justify-content-start align-items-center">
             <div class="col-xl-1 col-12 d-flex justify-content-between align-items-center">
                 <a href="<?php echo $path ?>index.php" class="logo-link">
@@ -46,9 +51,10 @@
                 </nav>
             </div>
                 <!-- /.col-8 -->
-            <div class="col-xl-3 pb-2 pb-xl-0 d-flex justify-content-end align-items-center">
+            <div class="reg-and-log col-xl-3 pb-2 pb-xl-0 d-flex justify-content-end align-items-center">
                 <a href="<?php echo $path ?>registration-form.php" class = "reg-button">Регистрация</a>
                 <a href="<?php echo $path ?>login.php" class = "log-in-button">Войти</a>
+                <a href = "<?php echo $path ?>cabinet.php" class = "avatar-link"><img class = "avatar-img" src="<?= $_SESSION['user']['avatar'] ?>" ></a>
                 <a href="<?php echo $path ?>cabinet.php" class = "header-username hidden"><?php $username = $_COOKIE['username']; echo $username ?></a>
                 <a href="#" class = "log-out-button hidden">Выйти</a>
             </div>
@@ -77,6 +83,7 @@
     loginBtn = document.querySelector('.log-in-button');
     username = document.querySelector('.header-username');
     logOutBtn = document.querySelector('.log-out-button');
+    avatarImg = document.querySelector('.avatar-img');
     function setCookie(name, value, options = {}) {
 
         options = {
@@ -117,12 +124,14 @@
         loginBtn.classList.add('hidden');
         username.classList.remove('hidden');
         logOutBtn.classList.remove('hidden');
+        avatarImg.classList.remove('hidden');
     } 
     if (getCookie("username") === undefined) {
         regBtn.classList.remove('hidden');
         loginBtn.classList.remove('hidden');
         username.classList.add('hidden');
         logOutBtn.classList.add('hidden');
+        avatarImg.classList.add('hidden');
     }
     logOutBtn.addEventListener('click', function(event){
         if (confirm("Вы действительно хотите выйти?")) {

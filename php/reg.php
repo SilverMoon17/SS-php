@@ -47,7 +47,10 @@
         header("Location: ../registration-form.php");
         exit();
     } else {
-        $mysql -> query("INSERT INTO `users` (`login`, `pass`, `name`, `email`, `pass_confirm`) VALUES ('$login', '$pass', '$username', '$email', '$pass_confirm')");
+        $path= 'uploads/' . time() . $_FILES['avatar']['name'];
+        move_uploaded_file($_FILES['avatar']['tmp_name'], '../' . $path);
+        $mysql -> query("INSERT INTO `users` (`login`, `pass`, `name`, `email`, `pass_confirm`, `avatar`) 
+        VALUES ('$login', '$pass', '$username', '$email', '$pass_confirm', '$path')");
 
     }
     

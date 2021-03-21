@@ -11,11 +11,12 @@
     
     $result = $mysql -> query("SELECT * FROM `users` WHERE `login` = 
     '$login' AND `pass` = '$pass'");
-    $user = $result->fetch_assoc();
+    $user = mysqli_fetch_assoc($result);
 
     $result_elogin = $mysql -> query("SELECT * FROM `users` WHERE `email` = 
     '$email' AND `pass` = '$pass'");
     $elogin = $result_elogin->fetch_assoc();
+
 
     if (count($user) == 0 and count($elogin) == 0) {
         $_SESSION['error'] = "Пользователь не найден";
@@ -23,13 +24,24 @@
         exit();
     } 
     if (count($elogin) != 0) {
-        setcookie('username', $elogin['name'], time() + 60*60*45, "/");        # code...
-    } elseif (count($user) != 0) {
+        setcookie('username', $elogin['name'], time() + 60*60*45, "/");
+        $_SESSION['user'] = [
+            "id" => $user['id'],
+            "avatar" => $user['avatar'],
+            "email" => $user['email']
+        ];
+} elseif (count($user) != 0) {
         setcookie('username', $user['name'], time() + 60*60*45, "/");
+        $_SESSION['user'] = [
+            "id" => $user['id'],
+            "name" => $user['name'],
+            "avatar" => $user['avatar'],
+            "email" => $user['email']
+        ];
     }
 
     
-    header ("Location:/");
+    header ("Location: ../cabinet.php");
     $mysql->close();
 
 ?>
