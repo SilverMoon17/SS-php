@@ -52,9 +52,13 @@
             </div>
                 <!-- /.col-8 -->
             <div class="reg-and-log col-xl-3 pb-2 pb-xl-0 d-flex justify-content-end align-items-center">
-                <a href="<?php echo $path ?>registration-form.php" class = "reg-button">Регистрация</a>
-                <a href="<?php echo $path ?>login.php" class = "log-in-button">Войти</a>
-                <a href = "<?php echo $path ?>cabinet.php" class = "avatar-link"><img class = "avatar-img" src="<?= $_SESSION['user']['avatar'] ?>" ></a>
+                <?php if ($_COOKIE['username'] == '') {
+                    echo '<a href="'. $path . 'registration-form.php" class = "reg-button">Регистрация</a>
+                        <a href="'. $path . 'login.php" class = "log-in-button">Войти</a>';
+                } ?>
+                <?php if ($_SESSION['user']['avatar'] != '' ) {
+                    echo '<a href = "'. $path .'cabinet.php" class = "avatar-link"><img class = "avatar-img" src="' . $_SESSION['user']['avatar'] . '" ></a>';
+                } ?>
                 <a href="<?php echo $path ?>cabinet.php" class = "header-username hidden"><?php $username = $_COOKIE['username']; echo $username ?></a>
                 <a href="#" class = "log-out-button hidden">Выйти</a>
             </div>
@@ -80,7 +84,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 d-flex justify-content-center">
-            <div class="confirm-block hidden">
+            <div class="confirm-block">
                 <h3 class="confirm-title text-light">Вы действительно хотите выйти?</h3>
                 <div class="confirm-buttons d-flex justify-content-end">
                     <button class="confirm-no">Нет</button>

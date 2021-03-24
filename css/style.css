@@ -14,6 +14,7 @@ body {
 .text-light {
     color: #fff
 }
+
 .header {
     padding-top: 5px;
     background-color: #000;
@@ -137,6 +138,7 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     width: 30px;
     height: 30px;
     border-radius:50%;
+    object-fit: cover;
     vertical-align: middle;
 }
 .avatar-link {
@@ -146,13 +148,17 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     margin-right: auto;
 }
 .confirm-block {
-    position: absolute;
+    position: fixed;
     z-index: 999999;
-    left: 38%;
     top: 30%;
+    margin: auto;
     background: #000000;
+    display: none;
     border-radius: 14px;
     box-shadow: 0 0 0 9999px rgba(0,0,0, 0.7);
+}
+.visible-1 {
+    display: block;
 }
 .confirm-title {
     padding-top: 18px;
@@ -492,18 +498,14 @@ label, .input-form {
 /* style login.php */
 .login-button {
     margin-top: 18px;
-    padding: 10px 24px;
-    position:absolute;
-    right: 47px;
+    padding: 10px 138.085px;
 }
 .registration-button {
-    position:absolute;
-    right: 43px;
     margin-top: 18px;
-    padding: 10px 24px;
+    padding: 10px 112.795px;
 }
 .input-form {
-    padding-right: 120px;
+    width: 323px;
     padding-top: 6px;
     padding-bottom: 6px;
     background: #FCFCFC;
@@ -522,13 +524,10 @@ label, .input-form {
     display: none;
 }
 .reg-off {
-    margin: 0;
-    position: absolute;
-    right: 11px;
-    font-size: 12px;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 14px;
     line-height: 24px;
-    left: 50px;
-    bottom: -49px;
 }
 .link-offer {
     color: #0094FF;

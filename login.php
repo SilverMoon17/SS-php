@@ -21,7 +21,7 @@
                 <div class="col-4">
                 <form method="post" action="php/auth.php" class="d-flex flex-column align-items-center justify-content-center" style="position:relative;">
                     <h3 class = "title login-title">Вход</h3>
-                    <label class="input-title">Логин или адрес электронной почты<input type = "text" class="input-form login" name="login" id="login" placeholder="Введите ваш логин или e-mail" autocomplete="off" onkeyup='checkParams()'></label>
+                    <label class="input-title">Логин или адрес электронной почты<input type = "text" class="input-form login" name="login" id="login" placeholder="Введите ваш логин или e-mail" onkeyup='checkParams()'></label>
                     <label class="input-title">Пароль<input type = "password" class="input-form password" name="pass" id="pass" placeholder="Введите ваш пароль" autocomplete="off" onkeyup='checkParams()'></label>
                     <?php
                         if ($_SESSION['error']) {
@@ -29,7 +29,8 @@
                         } 
                         unset($_SESSION['error'])
                     ?>
-                    <div><p class="reg-off">Нет аккаунта? - <a class = "link-offer" href = "registration-form.php">Зарегистрируйтесь</a></p><button type="submit" name="send" class="btn login-button disabled" disabled>Войти</button></div>
+                    <button type="submit" name="send" class="btn login-button disabled" disabled>Войти</button>
+                    <p class="reg-off">Нет аккаунта? - <a class = "link-offer" href = "registration-form.php">Зарегистрируйтесь</a></p>
                 </form>
               </div>  
             </div>

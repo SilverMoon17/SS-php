@@ -23,6 +23,7 @@ document.addEventListener('click', function(e) {
   };
 });
 
+const confirmButtons = document.querySelector('.confirm-buttons');
 const confirmYes = document.querySelector('.confirm-yes');
 const confirmNo = document.querySelector('.confirm-no');
 const confirmBlock = document.querySelector('.confirm-block');
@@ -67,23 +68,18 @@ regBtn = document.querySelector('.reg-button');
         })
     }
     if (getCookie("username") != '') {
-        regBtn.classList.add('hidden');
-        loginBtn.classList.add('hidden');
         username.classList.remove('hidden');
         logOutBtn.classList.remove('hidden');
-        avatarImg.classList.remove('hidden');
     } 
     if (getCookie("username") === undefined) {
-        regBtn.classList.remove('hidden');
-        loginBtn.classList.remove('hidden');
         username.classList.add('hidden');
         logOutBtn.classList.add('hidden');
-        avatarImg.classList.add('hidden');
     }
     logOutBtn.addEventListener('click', function(event){
       event.stopPropagation();
       event.preventDefault();
-      confirmBlock.classList.remove('hidden')
+      confirmBlock.classList.toggle('visible-1');
+      body.classList.toggle("fixed-page");
         // if (confirm("Вы действительно хотите выйти?")) {
         //     deleteCookie("username");
         //     window.location.href = '../index.php';
@@ -98,6 +94,19 @@ regBtn = document.querySelector('.reg-button');
     confirmNo.addEventListener('click', function(){
       location.reload()
   })
+
+  document.addEventListener('click', function(e) {
+    const target = e.target;
+    const its_menu = target == confirmBlock || confirmBlock.contains(target);
+    const its_btnMenu = target == confirmButtons;
+    const menu_is_active = confirmBlock.classList.contains('visible-1');
+  
+    if (!its_menu && !its_btnMenu && menu_is_active) {
+      confirmBlock.classList.toggle('visible-1');
+      body.classList.toggle("fixed-page");
+      body.classList.toggle("overlay");
+    };
+  }); 
 
 
 

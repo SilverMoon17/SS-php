@@ -7,7 +7,7 @@
     $pass_confirm = filter_var(trim($_POST['pass_confirm']), FILTER_SANITIZE_STRING);
 
 
-    if (mb_strlen($login) < 5 || mb_strlen($login) > 50) {
+    if (mb_strlen($login) < 3 || mb_strlen($login) > 50) {
         $_SESSION['error']= "Длина логина не должна быть меньше 5 символов и больше 50!";
         header("Location: ../registration-form.php");
         exit();
@@ -46,6 +46,12 @@
         $_SESSION['error'] = 'Пользователь с таким e-mail уже существует';
         header("Location: ../registration-form.php");
         exit();
+    }
+    
+    if ($_FILES['avatar']['name'] == '' ) {
+        $path = '';
+        $mysql -> query("INSERT INTO `users` (`login`, `pass`, `name`, `email`, `pass_confirm`, `avatar`) 
+        VALUES ('$login', '$pass', '$username', '$email', '$pass_confirm', '$path')");
     } else {
         $path= 'uploads/' . time() . $_FILES['avatar']['name'];
         move_uploaded_file($_FILES['avatar']['tmp_name'], '../' . $path);
@@ -62,7 +68,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/logo.ico" type="image/x-icon">
+    <link rel="icon" href="../img/logo.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/normalize.css">
