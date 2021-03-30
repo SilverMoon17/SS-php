@@ -14,13 +14,13 @@
     $user = mysqli_fetch_assoc($result);
 
 
-    if (count($user) == 0) {
+    if (mysqli_num_rows($result) == 0) {
         $_SESSION['error'] = "Пользователь не найден";
         header ("Location: ../login.php");
         exit();
     }    
-    if (count($user) != 0) {
-        setcookie('username', $user['name'], time() + 60*60*45, "/");
+    if (mysqli_num_rows($result) != 0) {
+        setcookie('username', $user['name'], time() + 60*45, "/");
         $_SESSION['user'] = [
             "id" => $user['id'],
             "login" => $user['login'],

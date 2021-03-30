@@ -212,7 +212,6 @@
     </main>
     <?php require 'template/footer.php' ?>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="js/bootstrap.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="js/main.js"></script>

@@ -141,8 +141,6 @@ input[type="search"]::-webkit-search-results-decoration { display: none; }
     object-fit: cover;
     vertical-align: middle;
 }
-.avatar-link {
-}
 .reg-and-log {
     display: inline-flex;
     margin-right: auto;
@@ -603,6 +601,20 @@ label, .input-form {
 
 
 
+/* cabinet.php style  */
+.avatar-image-cabinet:hover {
+    cursor: url('../img/cursor-zoom-in.png'), zoom-in;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 @media(max-width: 1200px) {
@@ -775,12 +787,6 @@ label, .input-form {
     }
     .input-form {
         padding: 0;
-    }
-    .registration-button {
-        left: -42px;
-    }
-    .login-button {
-        left: 7px;
     }
 }
 @media (max-width: 345px) {

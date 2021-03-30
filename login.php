@@ -44,7 +44,7 @@
             var password = $('.password').val();
             
 
-            if (login.length != 0 && login.length < 50 && login.length >= 5 && password.length >= 5) {
+            if (login.length != 0 && login.length < 50 && login.length >= 4 && password.length >= 5) {
                 $('.btn').removeAttr('disabled');
                 $('.btn').removeClass('disabled');
             } else {

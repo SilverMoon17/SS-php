@@ -34,16 +34,16 @@
     $exst_email = $result_email->fetch_assoc();
 
 
-    if (count($exst_login) != 0) {
+    if (mysqli_num_rows($result_login) != 0) {
         $_SESSION['error'] = 'Пользователь с таким логином уже существует';
+        header("Location: ../registration-form.php");
+        exit();
+    } else if (mysqli_num_rows($result_email) != 0) {
+        $_SESSION['error'] = 'Пользователь с таким e-mail уже существует';
         header("Location: ../registration-form.php");
         exit();
     } else if ($pass != $pass_confirm ) {
         $_SESSION['error'] = 'Пароли не совпадают';
-        header("Location: ../registration-form.php");
-        exit();
-    } else if (count($exst_email) != 0) {
-        $_SESSION['error'] = 'Пользователь с таким e-mail уже существует';
         header("Location: ../registration-form.php");
         exit();
     }
@@ -78,8 +78,9 @@
 </head>
 <body>
     <?php require '../template/header.php' ?>
-    <main class="main" style="margin-bottom:560px">
-        <h1 style="text-align: center; margin-top:30px"><i>Регистрация прошла успешно!</i></h1>
+    <main class="main" style="margin-bottom:597px">
+        <h1 style="text-align: center; margin-top:30px;margin-bottom: 50px"><i>Регистрация прошла успешно!</i></h1>
+        <p style="text-align: center;"><a href="../login.php" class="btn" style="padding: 10px 25px;">Войти</a></p>
     </main>
     <?php require '../template/footer.php' ?>
     <script src="../js/main.js"></script>

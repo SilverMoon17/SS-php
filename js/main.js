@@ -92,7 +92,7 @@ regBtn = document.querySelector('.reg-button');
         window.location.href = '../index.php';
     })
     confirmNo.addEventListener('click', function(){
-      location.reload()
+      confirmBlock.classList.toggle('visible-1');
   })
 
   document.addEventListener('click', function(e) {
@@ -100,13 +100,20 @@ regBtn = document.querySelector('.reg-button');
     const its_menu = target == confirmBlock || confirmBlock.contains(target);
     const its_btnMenu = target == confirmButtons;
     const menu_is_active = confirmBlock.classList.contains('visible-1');
-  
+
     if (!its_menu && !its_btnMenu && menu_is_active) {
       confirmBlock.classList.toggle('visible-1');
       body.classList.toggle("fixed-page");
       body.classList.toggle("overlay");
     };
-  }); 
+  });
 
-
+  $(document).keyup(function(e) {
+    if (((confirmBlock.classList.contains('visible-1') || menu.classList.contains('visible')) && e.keyCode === 27)) {
+      confirmBlock.classList.remove('visible-1');
+      menu.classList.remove('visible');
+      body.classList.toggle("fixed-page");
+      body.classList.toggle("overlay");
+    };
+  });
 

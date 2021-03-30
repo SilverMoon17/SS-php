@@ -30,10 +30,10 @@
                     <label class="input-title">Подтверждение пароля<input type = "text" class="input-form pass_confirm" name="pass_confirm" id="pass_confirm" placeholder="Подтвердите ваш пароль" autocomplete="off" onkeyup='checkParams()'></label>
                     <label class="input-title" style="max-width:325px;">Загрузите аватар профиля<input type = "file" class="file" style="margin-top: 4px;" name="avatar" id="file" onkeyup='checkParams()'></label>
                     <?php
-                        if ($_SESSION['error']) {
+                    if ($_SESSION['error']) {
                             echo '<p class="error">'.$_SESSION['error'].'</p>';
-                        } 
-                        unset($_SESSION['error']);
+                    } 
+                    unset($_SESSION['error']);
                     ?>
                     <button type="submit" name="send" class="btn registration-button disabled" disabled>Регистрация</button>
                     <p class="reg-off">Уже есть аккаунт? - <a class = "link-offer" href = "login.php">Войти</a></p>
